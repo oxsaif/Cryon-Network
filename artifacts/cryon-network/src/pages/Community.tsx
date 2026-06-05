@@ -11,7 +11,8 @@ const socials = [
   {
     icon: SiDiscord,
     name: "Discord",
-    handle: "cryon.network/discord",
+    handle: "discord.gg/aETwKpNSE",
+    href: "https://discord.gg/aETwKpNSE",
     members: "24.8K members",
     desc: "Real-time support, dev chat, governance discussions, and protocol announcements.",
     color: "from-indigo-500/20 to-indigo-600/5",
@@ -22,7 +23,8 @@ const socials = [
   {
     icon: SiX,
     name: "Twitter / X",
-    handle: "@CryonNetwork",
+    handle: "@CRYONNETWORK",
+    href: "https://x.com/CRYONNETWORK",
     members: "51.3K followers",
     desc: "Protocol updates, ecosystem highlights, live AMA announcements, and Web3 commentary.",
     color: "from-slate-500/20 to-slate-600/5",
@@ -34,6 +36,7 @@ const socials = [
     icon: SiGithub,
     name: "GitHub",
     handle: "github.com/cryon-network",
+    href: "https://github.com/cryon-network",
     members: "3.1K stars",
     desc: "Open-source SDKs, smart contracts, protocol specs, and contribution guides.",
     color: "from-gray-500/20 to-gray-600/5",
@@ -44,7 +47,8 @@ const socials = [
   {
     icon: SiTelegram,
     name: "Telegram",
-    handle: "t.me/CryonNetwork",
+    handle: "t.me/cryonnetwork1",
+    href: "https://t.me/cryonnetwork1",
     members: "18.2K members",
     desc: "Community chat, price discussion, and region-specific groups in 8 languages.",
     color: "from-sky-500/20 to-sky-600/5",
@@ -194,12 +198,15 @@ export default function Community() {
                     </div>
                     <p className="text-xs text-muted-foreground mb-1">{s.handle}</p>
                     <p className="text-sm text-muted-foreground mb-3">{s.desc}</p>
-                    <button
+                    <a
+                      href={s.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex items-center gap-1 text-sm font-medium text-primary hover:gap-2 transition-all"
                       data-testid={`button-social-${s.name}`}
                     >
                       {s.cta} <ExternalLink className="w-3 h-3" />
-                    </button>
+                    </a>
                   </div>
                 </div>
               </MotionGlassCard>

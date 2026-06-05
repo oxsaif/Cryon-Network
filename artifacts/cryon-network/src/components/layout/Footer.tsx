@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { SiDiscord, SiGithub, SiX, SiTelegram } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import logoImg from "@assets/-dvyu3n_1780696529835.jpg";
 
 export default function Footer() {
   return (
@@ -12,25 +13,23 @@ export default function Footer() {
           {/* Brand */}
           <div className="flex flex-col gap-4">
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-6 h-6 rounded flex items-center justify-center bg-gradient-to-br from-primary to-secondary">
-                <span className="text-background font-bold text-xs">C</span>
-              </div>
+              <img src={logoImg} alt="Cryon Network" className="w-8 h-8 rounded-lg object-cover" />
               <span className="font-bold text-lg tracking-wider">CRYON NETWORK</span>
             </Link>
             <p className="text-muted-foreground text-sm max-w-xs">
               The sovereign identity protocol for the next generation of trustless applications, DAOs, and AI agents.
             </p>
             <div className="flex gap-4 mt-2">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://x.com/CRYONNETWORK" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-twitter">
                 <SiX size={20} />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://discord.gg/aETwKpNSE" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-discord">
                 <SiDiscord size={20} />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="#" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-github">
                 <SiGithub size={20} />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://t.me/cryonnetwork1" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-telegram">
                 <SiTelegram size={20} />
               </a>
             </div>

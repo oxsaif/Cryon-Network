@@ -3,6 +3,7 @@ import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import logoImg from "@assets/-dvyu3n_1780696529835.jpg";
 
 const navLinks = [
   { name: "Whitepaper", path: "/whitepaper" },
@@ -23,9 +24,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-md bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-              <span className="font-bold text-background text-lg leading-none">C</span>
-            </div>
+            <img src={logoImg} alt="Cryon Network" className="w-9 h-9 rounded-lg object-cover" />
             <span className="font-bold text-xl tracking-wider text-foreground">CRYON</span>
           </Link>
 
