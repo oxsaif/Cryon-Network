@@ -17,6 +17,7 @@ import Metrics from "@/pages/Metrics";
 import Governance from "@/pages/Governance";
 import Community from "@/pages/Community";
 import Support from "@/pages/Support";
+import Token from "@/pages/Token";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +35,7 @@ function Router() {
           <Route path="/governance" component={Governance} />
           <Route path="/community" component={Community} />
           <Route path="/support" component={Support} />
+          <Route path="/token" component={Token} />
           <Route component={NotFound} />
         </Switch>
       </main>
