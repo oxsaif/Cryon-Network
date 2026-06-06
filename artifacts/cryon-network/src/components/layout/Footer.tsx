@@ -26,7 +26,7 @@ export default function Footer() {
               <a href="https://discord.gg/aETwKpNSE" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-discord">
                 <SiDiscord size={20} />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-github">
+              <a href="https://github.com/oxsaif/cryon-network" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-github">
                 <SiGithub size={20} />
               </a>
               <a href="https://t.me/cryonnetwork1" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-telegram">
