@@ -8,10 +8,11 @@ import logoImg from "@assets/-dvyu3n_1780696529835.jpg";
 const navLinks = [
   { name: "Whitepaper", path: "/whitepaper" },
   { name: "Docs", path: "/docs" },
+  { name: "Explorer", path: "/explorer" },
   { name: "Metrics", path: "/metrics" },
   { name: "Governance", path: "/governance" },
   { name: "Community", path: "/community" },
-  { name: "Support", path: "/support" },
+  { name: "FAQ", path: "/faq" },
 ];
 
 export default function Navbar() {
