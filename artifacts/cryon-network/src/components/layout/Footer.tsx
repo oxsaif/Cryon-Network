@@ -49,8 +49,9 @@ export default function Footer() {
             <h3 className="font-semibold text-foreground mb-1">Resources</h3>
             <Link href="/blog" className="text-muted-foreground hover:text-primary text-sm transition-colors">Blog & News</Link>
             <Link href="/community" className="text-muted-foreground hover:text-primary text-sm transition-colors">Community</Link>
+            <Link href="/explorer" className="text-muted-foreground hover:text-primary text-sm transition-colors">DID Explorer</Link>
+            <Link href="/faq" className="text-muted-foreground hover:text-primary text-sm transition-colors">FAQ</Link>
             <Link href="/support" className="text-muted-foreground hover:text-primary text-sm transition-colors">Support Center</Link>
-            <a href="#" className="text-muted-foreground hover:text-primary text-sm transition-colors">Brand Assets</a>
           </div>
 
           {/* Newsletter */}
