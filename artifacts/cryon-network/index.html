@@ -3,22 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>Cryon Network</title>
-    <meta name="description" content="Cryon Network — built on Replit. Update this description to reflect the app." />
+    <title>Cryon Network — Sovereign Identity on Solana</title>
+    <meta name="description" content="Cryon Network is a decentralized identity (DID) protocol built on Solana for users, DAOs, and AI agents." />
     <meta name="robots" content="index, follow" />
     <meta property="og:title" content="Cryon Network" />
-    <meta property="og:description" content="Cryon Network — built on Replit. Update this description to reflect the app." />
+    <meta property="og:description" content="Sovereign Identity for the Trustless Web. The foundational DID layer on Solana." />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Cryon Network" />
-    <meta name="twitter:description" content="Cryon Network — built on Replit. Update this description to reflect the app." />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="twitter:site" content="@CRYONNETWORK" />
+    <meta name="twitter:description" content="Sovereign Identity for the Trustless Web. Built on Solana." />
+    <link rel="icon" type="image/jpeg" href="./attached_assets/-dvyu3n_1780696529835.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+      (function(l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function(s) {
+            return s.replace(/~and~/g, '&');
+          }).join('?');
+          window.history.replaceState(null, null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location));
+    </script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="./src/main.tsx"></script>
   </body>
 </html>
