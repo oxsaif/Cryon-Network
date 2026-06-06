@@ -46,9 +46,11 @@ export default function Navbar() {
           {/* CTA & Mobile Toggle */}
           <div className="flex items-center gap-4">
             <div className="hidden md:block">
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold shadow-[0_0_15px_rgba(0,255,255,0.3)] transition-all">
-                Launch App
-              </Button>
+              <a href="https://oxsaif.github.io/Cryon-Network-Core/" target="_blank" rel="noopener noreferrer">
+                <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold shadow-[0_0_15px_rgba(0,255,255,0.3)] transition-all">
+                  Launch App
+                </Button>
+              </a>
             </div>
             <button
               className="md:hidden text-foreground p-2"
@@ -84,9 +86,11 @@ export default function Navbar() {
                   {link.name}
                 </Link>
               ))}
-              <Button className="w-full mt-2 bg-primary text-primary-foreground">
-                Launch App
-              </Button>
+              <a href="https://oxsaif.github.io/Cryon-Network-Core/" target="_blank" rel="noopener noreferrer" className="w-full">
+                <Button className="w-full mt-2 bg-primary text-primary-foreground">
+                  Launch App
+                </Button>
+              </a>
             </div>
           </motion.div>
         )}
