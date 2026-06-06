@@ -18,6 +18,8 @@ import Governance from "@/pages/Governance";
 import Community from "@/pages/Community";
 import Support from "@/pages/Support";
 import Token from "@/pages/Token";
+import FAQ from "@/pages/FAQ";
+import DIDExplorer from "@/pages/DIDExplorer";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +38,8 @@ function Router() {
           <Route path="/community" component={Community} />
           <Route path="/support" component={Support} />
           <Route path="/token" component={Token} />
+          <Route path="/faq" component={FAQ} />
+          <Route path="/explorer" component={DIDExplorer} />
           <Route component={NotFound} />
         </Switch>
       </main>
