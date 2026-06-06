@@ -8,6 +8,7 @@ import logoImg from "@assets/-dvyu3n_1780696529835.jpg";
 const navLinks = [
   { name: "Whitepaper", path: "/whitepaper" },
   { name: "Docs", path: "/docs" },
+  { name: "Token", path: "/token" },
   { name: "Metrics", path: "/metrics" },
   { name: "Governance", path: "/governance" },
   { name: "Community", path: "/community" },
