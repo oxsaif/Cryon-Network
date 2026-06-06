@@ -4,7 +4,7 @@ import { GlassCard, MotionGlassCard } from "@/components/ui/glass-card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { Users, Calendar, Globe, ExternalLink, MessageSquare, Trophy } from "lucide-react";
+import { Calendar, Globe, ExternalLink, MessageSquare, Trophy, Code2, GitFork, Copy, Check } from "lucide-react";
 import { SiDiscord, SiX, SiGithub, SiTelegram } from "react-icons/si";
 
 const socials = [
@@ -35,10 +35,10 @@ const socials = [
   {
     icon: SiGithub,
     name: "GitHub",
-    handle: "github.com/cryon-network",
-    href: "https://github.com/cryon-network",
-    members: "3.1K stars",
-    desc: "Open-source SDKs, smart contracts, protocol specs, and contribution guides.",
+    handle: "github.com/oxsaif/cryon-network",
+    href: "https://github.com/oxsaif/cryon-network",
+    members: "Open Source · MIT",
+    desc: "Open-source SDKs, Solana program (Anchor), protocol specs, and contribution guides.",
     color: "from-gray-500/20 to-gray-600/5",
     border: "border-gray-500/30 hover:border-gray-400/60",
     iconColor: "text-gray-300",
@@ -102,6 +102,30 @@ const contributors = [
   { handle: "did_builder.did", role: "SDK Author", commits: 245, badge: "Builder" },
   { handle: "zkwizard.did", role: "ZK Engineer", commits: 181, badge: "ZK Expert" },
 ];
+
+const DEVNET_PROGRAM_ID = "DbXqtgDjcERBX9PitvBUsY18gAvNLKnFhwiU4DfvDF5";
+
+function DevnetProgramId() {
+  const [copied, setCopied] = useState(false);
+  const copy = () => {
+    navigator.clipboard.writeText(DEVNET_PROGRAM_ID);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+  return (
+    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 p-3 rounded-lg bg-background/60 border border-border">
+      <span className="text-xs text-muted-foreground whitespace-nowrap flex-shrink-0">Devnet Program ID</span>
+      <code className="font-mono text-xs text-primary break-all flex-1">{DEVNET_PROGRAM_ID}</code>
+      <button
+        onClick={copy}
+        className="flex-shrink-0 p-1.5 rounded hover:bg-muted transition-colors"
+        title="Copy to clipboard"
+      >
+        {copied ? <Check className="w-3.5 h-3.5 text-green-400" /> : <Copy className="w-3.5 h-3.5 text-muted-foreground" />}
+      </button>
+    </div>
+  );
+}
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -290,6 +314,102 @@ export default function Community() {
                 <div className="text-xs text-muted-foreground mt-2">{c.commits} commits</div>
               </GlassCard>
             ))}
+          </div>
+        </motion.div>
+
+        {/* Open Source */}
+        <motion.div {...fadeInUp} className="mb-16">
+          <h2 className="text-2xl font-bold text-foreground mb-2 flex items-center gap-2">
+            <Code2 className="w-5 h-5 text-primary" />
+            Open Source Repository
+          </h2>
+          <p className="text-muted-foreground text-sm mb-8">
+            Cryon Network is fully open source. Inspect, fork, audit, and contribute to the protocol.
+          </p>
+
+          {/* Repo card */}
+          <GlassCard className="p-6 mb-6 border-primary/20">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+              <div className="flex items-center gap-3">
+                <SiGithub className="w-6 h-6 text-foreground" />
+                <div>
+                  <a
+                    href="https://github.com/oxsaif/cryon-network"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-mono font-bold text-primary hover:underline text-lg"
+                  >
+                    oxsaif/cryon-network
+                  </a>
+                  <p className="text-xs text-muted-foreground mt-0.5">
+                    Solana program (Anchor) · Frontend UI · Deployment scripts
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center gap-2 flex-shrink-0">
+                <img
+                  src="https://img.shields.io/badge/License-MIT-yellow.svg"
+                  alt="MIT License"
+                  className="h-5"
+                />
+                <a
+                  href="https://github.com/oxsaif/cryon-network"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button size="sm" variant="outline" className="gap-2 border-primary/30 hover:border-primary">
+                    <GitFork className="w-4 h-4" /> Fork
+                  </Button>
+                </a>
+              </div>
+            </div>
+            <p className="text-sm text-muted-foreground mb-4">
+              MIT License — Free to use, modify, distribute, even commercially. Open source · Free to fork and contribute.
+            </p>
+
+            {/* Devnet Program ID */}
+            <DevnetProgramId />
+          </GlassCard>
+
+          {/* Contribution Steps */}
+          <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
+            <GitFork className="w-4 h-4 text-primary" />
+            How to Contribute
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+            {[
+              { step: "01", title: "Fork the repo", desc: "Click Fork on GitHub to create your copy." },
+              { step: "02", title: "Clone locally", desc: "Requires Anchor, Solana CLI & Node.js." },
+              { step: "03", title: "Pick an issue", desc: 'Look for "good first issue" in the Issues tab.' },
+              { step: "04", title: "Create a branch", desc: "feature/your-feature-name" },
+              { step: "05", title: "Submit a PR", desc: "Open a pull request with tests included." },
+            ].map((s) => (
+              <div key={s.step} className="p-4 rounded-xl bg-muted/30 border border-border/50">
+                <div className="text-2xl font-mono font-bold text-primary/40 mb-2">{s.step}</div>
+                <p className="font-semibold text-sm mb-1">{s.title}</p>
+                <p className="text-xs text-muted-foreground">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-4 flex flex-wrap gap-3">
+            <a
+              href="https://github.com/oxsaif/cryon-network/blob/main/CONTRIBUTING.md"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button variant="outline" size="sm" className="gap-2 border-primary/30 hover:border-primary">
+                <ExternalLink className="w-3 h-3" /> Full Contribution Guide
+              </Button>
+            </a>
+            <a
+              href="https://github.com/oxsaif/cryon-network/issues"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button variant="outline" size="sm" className="gap-2 border-primary/30 hover:border-primary">
+                <ExternalLink className="w-3 h-3" /> Open Issues
+              </Button>
+            </a>
           </div>
         </motion.div>
 
